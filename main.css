@@ -26,6 +26,11 @@ footer {
     text-align: right;
 }
 
+a {
+    color: green;
+    text-decoration: none;
+    transition: 0.5s 2s;
+}
 
 a:link {
     color: #FAED26;
@@ -40,6 +45,7 @@ a:visited {
 a:hover {
     color: #3500D3;
     text-decoration: underline;
+    transition: 0.3s
 }
 
 a:active {
