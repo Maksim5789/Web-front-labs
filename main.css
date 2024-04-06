@@ -25,3 +25,24 @@ footer {
     font-style: italic; 
     text-align: right;
 }
+
+
+a:link {
+    color: #FAED26;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: black;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #3500D3;
+    text-decoration: underline;
+}
+
+a:active {
+    color: black;
+    opacity: 0.3;
+}
