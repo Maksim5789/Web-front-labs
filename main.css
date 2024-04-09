@@ -5,6 +5,12 @@ body {
     margin: 0px;
 }
 
+header {
+    background-color: black; 
+    color: LightGreen; 
+    padding: 10px; 
+    font-size: 16pt;
+}
 
 main {
     background-color: #659DBD;
@@ -13,19 +19,11 @@ main {
     padding: 15px; 
 }
 
-header {
-    background-color: black; 
-    color: LightGreen; 
-    padding: 10px; 
-    font-size: 16pt;
-}
-
 footer {
     background-color: black; 
     color: LightGreen; 
     padding: 10px; 
     font-size: 16pt; 
-    font-style: italic; 
     text-align: right;
     position: fixed;
     bottom: 0;
