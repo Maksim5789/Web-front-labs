@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Акишин Максим Валерьевич. Лабораторная №4</title>
+    <link rel="stylesheet" href="..\main.css">
+    <link rel="shortcut icon" href="..\favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="..\favicon-32x32.png">
+    <link rel="shortcut icon" href="..\favicon-48x48.ico">
+    <style>
+        .block {
+            height: 70px;
+            line-height: 70px;
+            text-align: center;
+            background-color: white;
+            border: 1px dotted darkgreen;
+            margin: 15px;
+            border-radius: 50%;
+            position: absolute;
+            opacity: 0;
+            box-shadow: 5px 5px 15px white;
+        }
+        
+        #block1 {
+            width: 100px;
+            left: 700px;
+            top: 300px;
+            transition: opacity 1s;
+        }
+
+        #block2 {
+            width: 125px;
+            left: 750px;
+            top: 370px;
+            transition: opacity 3s;
+        }
+
+        #block3 {
+            width: 150px;
+            left: 800px;
+            top: 450px;
+            transition: opacity 4s;
+        }
+
+        #phrase {
+            width: 175px;
+            left: 878px;
+            top: 520px;
+            transition: opacity 5s; 
+        }
+
+        .container {
+            position: relative;
+            display: inline-block;
+        }
+
+        img {
+            max-width: 70%;
+            display: block;
+            border-radius: 10px;
+        }
+    
+        img:hover ~ .block {
+            opacity: 1;
+        }
+
+        .block:hover {
+            cursor: pointer;
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная №4
+    </header>
+
+    <main>
+        <div class="container">
+        <img src="../ANNO1800.jpg" alt="Image">
+        <div class="block" id="block1"> </div>
+        <div class="block" id="block2"> </div>
+        <div class="block" id="block3"> </div>
+        <div class="block" id="phrase">Speak only truth</div>
+        </div>
+    </main>
+    
+    <footer>
+        &copy; Акишин Максим, ФБИ-22, 2 курс, 2024
+    </footer>   
+</body>
+</html>
