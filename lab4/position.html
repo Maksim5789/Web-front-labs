@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Акишин Максим Валерьевич. Лабораторная №4</title>
+    <link rel="stylesheet" href="..\main.css">
+    <link rel="shortcut icon" href="..\favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="..\favicon-32x32.png">
+    <link rel="shortcut icon" href="..\favicon-48x48.ico">
+    <style>
+        div {
+            width: 300px;
+            height: 70px;
+            line-height: 70px;
+            text-align: center;
+            background-color: white;
+            border: 1px dotted darkgreen;
+            margin: 15px;
+        }
+
+        .position-relative {
+            position: relative;
+            left: 120px;
+            top: -130px;
+            z-index: -1;
+        }
+        .static {
+            position: relative;
+        }
+        .static:hover ~ .position-relative {
+            z-index: 1;
+        }
+
+        .position-absolute {
+            position: absolute;
+            left: 300px;
+            transition: all 0.3s ease; /* добавляем плавное изменение */
+        }
+
+        .position-absolute:hover {
+            transform: scale(1.1); /* увеличиваем размер при наведении */
+            background-color: lightblue; /* изменяем цвет при наведении */
+            box-shadow: 10px 10px 20px rgba(0, 0, 1, 1); /* добавляем тень */
+        }
+          
+        
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная №4
+    </header>
+
+    <main>
+       <div class="static">static</div>
+       <div class="static">static</div>
+       <div class="position-relative">relative</div>
+       <div>static</div>
+       <div>static</div>
+       <div class="position-absolute">absolute</div>
+       <div>static</div>
+       <div>static</div>
+       <div>static</div>
+       <div>static</div>
+    </main>
+    
+    <footer>
+        &copy; Акишин Максим, ФБИ-22, 2 курс, 2024
+    </footer>   
+</body>
+</html>

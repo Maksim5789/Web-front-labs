@@ -1,13 +1,8 @@
 body {
-    background-color: #EAE7DC;
+    background-color: #659DBD;
     color: black;
     font-family: Arial;
     margin: 0px;
-}
-
-main {
-    background-color: #a67b5b;
-    color: black;
 }
 
 header {
@@ -17,11 +12,59 @@ header {
     font-size: 16pt;
 }
 
+main {
+    color: black;
+    margin: 10px 20px 45px;
+    padding: 15px; 
+}
+
 footer {
     background-color: black; 
     color: LightGreen; 
     padding: 10px; 
     font-size: 16pt; 
-    font-style: italic; 
     text-align: right;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+a {
+    color: green;
+    text-decoration: none;
+    transition: 0.5s 2s;
+}
+
+a:link {
+    color: #FAED26;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: black;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #3500D3;
+    text-decoration: underline;
+    transition: 0.3s
+}
+
+a:active {
+    color: black;
+    opacity: 0.3;
+}
+
+div.menu {
+    border: 7px solid #F79E02;
+    border-radius: 5px;
+    width: 300px;
+    margin: 0 auto;
+}
+
+div.menu:hover {
+    background-color: rgb(72, 116, 90);
+    box-shadow: 0 0 15px black;
 }
