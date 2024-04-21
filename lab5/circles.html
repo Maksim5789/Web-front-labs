@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Акишин Максим Валерьевич. Лабораторная №5</title>
+    <link rel="stylesheet" href="..\main.css">
+    <link rel="shortcut icon" href="..\favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="..\favicon-32x32.png">
+    <link rel="shortcut icon" href="..\favicon-48x48.ico">
+    <script>
+        function showCircles() {
+            let circles = document.querySelectorAll('.circle.hidden');
+            circles.forEach(circle => {
+                circle.classList.remove('hidden');
+            });
+        }
+
+    </script>
+    <style>
+        .circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 10px;
+            cursor: pointer;
+            text-align: center;
+            line-height: 50px;
+            transition: opacity 1s;
+            opacity: 1;
+            border: 3px solid black;
+            font-size: 30px;
+        }
+
+        .hidden {
+        opacity: 0;
+        }
+
+        .circle.red {
+            background-color: red;
+            position: absolute;
+            left: 900px;
+            top: 100px;
+        }
+        
+        .circle.white {
+            background-color: white;
+            position: absolute;
+            left: 800px;
+            top: 360px;
+            transition: 1s;
+        }
+        
+        .circle.grey {
+            background-color: grey;
+            position: absolute;
+            left: 850px;
+            top:750px;
+            transition: 1s;
+        }
+
+        .circle.burlywood {
+            background-color: burlywood;
+            position: absolute;
+            left: 600px;
+            top: 150px;
+        }
+        
+        .circle.olivedrab {
+            background-color: olivedrab;
+            position: absolute;
+            left: 950px;
+            top: 550px;
+        }
+        
+        .circle.gold {
+            background-color: gold;
+            position: absolute;
+            left: 130px;
+            top: 400px;
+        }
+
+        .circle.orange {
+            background-color: orange;
+            position: absolute;
+            left: 130px;
+            top: 500px;
+        }
+        
+        .circle.greenyellow {
+            background-color: greenyellow;
+            position: absolute;
+            left: 300px;
+            top: 80px;
+        }
+        
+        .circle.darkgreen {
+            background-color: darkgreen;
+            position: absolute;
+            left: 90px;
+            top: 200px;
+        }
+
+        .circle.yellow {
+            background-color: yellow;
+            position: absolute;
+            left: 200px;
+            top: 85px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная №5
+    </header>
+
+    <main>
+    <div class="circle red" onclick="this.classList.add('hidden');">1</div>
+    <div class="circle white" onclick="this.classList.add('hidden');">2</div>
+    <div class="circle grey" onclick="this.classList.add('hidden');">3</div>
+    <div class="circle burlywood" onclick="this.classList.add('hidden');">4</div>
+    <div class="circle olivedrab" onclick="this.classList.add('hidden');">5</div>
+    <div class="circle gold" onclick="this.classList.add('hidden');">6</div>
+    <div class="circle orange" onclick="this.classList.add('hidden');">7</div>
+    <div class="circle greenyellow" onclick="this.classList.add('hidden');">8</div>
+    <div class="circle darkgreen" onclick="this.classList.add('hidden');">9</div>
+    <div class="circle yellow" onclick="this.classList.add('hidden');">10</div>
+
+    <button onclick="showCircles()">Показать все кружочки</button>
+    </main>
+
+    <footer>
+        &copy; Акишин Максим, ФБИ-22, 2 курс, 2024
+    </footer>  
+</body>
+</html>
