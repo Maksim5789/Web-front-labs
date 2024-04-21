@@ -58,6 +58,15 @@
             let message = "Приветствую вас на моей странице! Не рушьте мою страницу!"
             alert (message)
         }
+
+        function changeOutput(buttonNum, backColor, textColor, borderColor, width) {
+            let output = document.getElementById("output");
+            output.innerHTML = "Нажата кнопка " + buttonNum;
+            output.style.backgroundColor = backColor;
+            output.style.color = textColor;
+            output.style.borderColor = borderColor;
+            output.style.borderWidth  = width + 'px';
+        }
     </script>
     <style>
         .message {
@@ -77,6 +86,11 @@
             cursor: pointer;
         }
 
+        #output {
+            border: 1px solid;
+            width: 300px;
+            height: 40px;
+        }
     </style>
 </head>
 <body>
@@ -108,10 +122,17 @@
             <label>Второе число: <input type="number" value="" id="numberB3"></label><br>
             <div class="message" onclick="showDiv()">Найти деление чисел</div>
         </div>
-
         
         <div class="message" onclick="showAuthor()" style="margin: 20px;">Узнать, кто автор страницы</div>
+
+        <div>
+            <input type="button" value="Кнопка 1" onclick="changeOutput(1, 'rgb(197, 255, 221)', 'black', '#F79E02', '5')">
+            <input type="button" value="Кнопка 2" onclick="changeOutput(2, '#B7D904', '#1D4792', '#0537B4', '10')">
+            <input type="button" value="Кнопка 3" onclick="changeOutput(3, '#3F5089', '#91F6A4', '#2BD35C', '20')">
+            <input type="button" value="Кнопка 4" onclick="changeOutput(4, '#CEF30D', '#D60E3F', '#910E3B','15')">
         </div>
+
+        <div id="output"></div>
     </main>
     
     <footer class="pointer" ondblclick="showMessage()">
