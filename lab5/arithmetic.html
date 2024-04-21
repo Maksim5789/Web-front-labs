@@ -10,10 +10,13 @@
     <link rel="shortcut icon" href="..\favicon-48x48.ico">
     <script>
         function showSum() {
-            let a = 5154;
-            let b = 7891;
-            let result = a+b;
-            alert("Сумма" + a + " и " + b + "равна " + result);
+            let inputA = document.getElementById("numberA");
+            let inputB = document.getElementById("numberB");
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a + b;
+            alert("Сумма " + a + " и " + b + " равна " + result);
         }
 
         function showAuthor() {
@@ -30,11 +33,14 @@
         .message {
             cursor: pointer;
             display: inline-block;
-            width: 200px;
+            width: 300px;
             height: 50px;
             background-color: rgb(197, 255, 221);
             border: 3px solid #F79E02;
             color: black;
+            font-size: 20px;
+            text-align: center;
+            line-height: 50px;
         }
 
         .pointer {
@@ -49,7 +55,10 @@
     </header>
 
     <main>
-        <div class="message" onclick="showSum()">Сколько будет 5154+7891?</div>
+        <label>Первое число: <input type="number" value="" id="numberA"></label><br>
+        <label>Второе число: <input type="number" value="" id="numberB"></label><br>
+        <div class="message" onclick="showSum()">Найти сумму чисел</div>
+        
         <div class="message" onclick="showAuthor()">Узнать, кто автор страницы</div>
     </main>
     
