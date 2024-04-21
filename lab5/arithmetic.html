@@ -19,6 +19,36 @@
             alert("Сумма " + a + " и " + b + " равна " + result);
         }
 
+        function showDif() {
+            let inputA1 = document.getElementById("numberA1");
+            let inputB1 = document.getElementById("numberB1");
+
+            let a1 = parseInt(inputA1.value);
+            let b1 = parseInt(inputB1.value);
+            let result1 = a1 - b1;
+            alert("Разность " + a1 + " и " + b1 + " равна " + result1);
+        }
+
+        function showMult() {
+            let inputA2 = document.getElementById("numberA2");
+            let inputB2 = document.getElementById("numberB2");
+
+            let a2 = parseInt(inputA2.value);
+            let b2 = parseInt(inputB2.value);
+            let result2 = a2 * b2;
+            alert("Умножение " + a2 + " на " + b2 + " равно " + result2);
+        }
+
+        function showDiv() {
+            let inputA3 = document.getElementById("numberA3");
+            let inputB3 = document.getElementById("numberB3");
+
+            let a3 = parseInt(inputA3.value);
+            let b3 = parseInt(inputB3.value);
+            let result3 = a3 / b3;
+            alert("Деление числа " + a3 + " на " + b3 + " равно " + result3);
+        }
+
         function showAuthor() {
             let author = "Автор страницы; \nАкишин Максим Валерьевич"
             alert(author)
@@ -55,11 +85,33 @@
     </header>
 
     <main>
+        <div style="padding: 20px;">
         <label>Первое число: <input type="number" value="" id="numberA"></label><br>
         <label>Второе число: <input type="number" value="" id="numberB"></label><br>
         <div class="message" onclick="showSum()">Найти сумму чисел</div>
+        </div>
+
+        <div style="padding: 20px;">
+        <label>Первое число: <input type="number" value="" id="numberA1"></label><br>
+        <label>Второе число: <input type="number" value="" id="numberB1"></label><br>
+        <div class="message" onclick="showDif()">Найти разность чисел</div>
+        </div>
+
+        <div style="padding: 20px;">
+            <label>Первое число: <input type="number" value="" id="numberA2"></label><br>
+            <label>Второе число: <input type="number" value="" id="numberB2"></label><br>
+            <div class="message" onclick="showMult()">Найти умножение чисел</div>
+        </div>
+
+        <div style="padding: 20px;">
+            <label>Первое число: <input type="number" value="" id="numberA3"></label><br>
+            <label>Второе число: <input type="number" value="" id="numberB3"></label><br>
+            <div class="message" onclick="showDiv()">Найти деление чисел</div>
+        </div>
+
         
-        <div class="message" onclick="showAuthor()">Узнать, кто автор страницы</div>
+        <div class="message" onclick="showAuthor()" style="margin: 20px;">Узнать, кто автор страницы</div>
+        </div>
     </main>
     
     <footer class="pointer" ondblclick="showMessage()">
