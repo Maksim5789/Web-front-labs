@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Акишин Максим Валерьевич. Лабораторная №5</title>
+    <link rel="stylesheet" href="..\main.css">
+    <link rel="shortcut icon" href="..\favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="..\favicon-32x32.png">
+    <link rel="shortcut icon" href="..\favicon-48x48.ico">
+    <script>
+        function showAuthor() {
+            let author = "Автор страницы; \nАкишин Максим Валерьевич"
+            alert(author)
+        }
+
+        function showMessage() {
+            let message = "Приветствую вас на моей странице! Не рушьте мою страницу!"
+            alert (message)
+        }
+
+        function changeOutput(buttonNum) {
+            let output = document.getElementById("output");
+            let inputA = document.getElementById("numberA");
+            let inputB = document.getElementById("numberB");
+            let inputC = document.getElementById("numberC");
+            let inputD = document.getElementById("numberD");
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let c = parseInt(inputC.value);
+            let d = parseInt(inputD.value);
+            let result = (a*500) + (b*100) + (c*200) + (d*250);
+            output.innerHTML = "Общая сумма: " + result + " рупий";
+        }
+
+        function checkValue(input) {
+            if (input.value === '') {
+                input.value = '0';
+            }
+        }
+
+        function clearFields() {
+            document.getElementById("output").innerText = "";
+            document.getElementById("numberA").value = "";
+            document.getElementById("numberB").value = "";
+            document.getElementById("numberC").value = "";
+            document.getElementById("numberD").value = "";
+        }
+    </script>
+
+    <style>
+        .message {
+            cursor: pointer;
+            display: inline-block;
+            width: 300px;
+            height: 50px;
+            background-color: rgb(197, 255, 221);
+            border: 3px solid #F79E02;
+            color: black;
+            font-size: 20px;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        .pointer {
+            cursor: pointer;
+        }
+
+        #output {
+            border: 1px solid;
+            width: 300px;
+            height: 40px;
+            background-color: rgb(197, 255, 221);
+            border-color: #F79E02;
+        }
+    </style>
+
+</head>
+<body>
+    <header class="pointer" onclick="showAuthor()">
+        НГТУ, ФБ, Лабораторная №5
+    </header>
+
+    <main>
+        <div style="width: 500px; height: 400px; background-color: powderblue; border-style: solid; border-width: 5px; border-color: black; padding: 30px;">
+            <p><h1>Корзина продуктов</h1></p>
+            <div style="padding: 20px;">
+                <label>Картошка (500 рупий/ 1 кг)<input type="number" value="0" min="0" placeholder="Введите картошку" oninput="checkValue(this)" id="numberA"></label><br>
+            </div>
+        
+            <div style="padding: 20px;">
+                <label>Хлеб (100 рупий/ 1 булка)<input type="number" value="0" min="0" placeholder="Введите хлеб" oninput="checkValue(this)" id="numberB"></label><br>
+            </div>
+        
+            <div style="padding: 20px;">
+                <label>200 рупий/ 1 десяток яиц<input type="number" value="0" min="0" placeholder="Введите десятки яиц" oninput="checkValue(this)" id="numberC"></label><br>
+            </div>
+        
+            <div style="padding: 20px;">
+                <label>250 рупий/ 1 бутылка масла<input type="number" value="0" min="0" placeholder="Введите масло" oninput="checkValue(this)" id="numberD"></label><br>
+            </div>
+
+            <div>
+                <button onclick="clearFields()">Очистить</button>
+            </div>
+
+            <div>
+                <input type="button" value="Рассчитать" onclick="changeOutput(numberA, numberB, numberC, numberD)">
+            </div>
+    
+            <div id="output"></div>
+        </div>
+    </main>
+    
+    <footer class="pointer" ondblclick="showMessage()">
+        &copy; Акишин Максим, ФБИ-22, 2 курс, 2024
+    </footer>   
+</body>
+</html>
+
