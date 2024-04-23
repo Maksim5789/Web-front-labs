@@ -98,6 +98,20 @@
             <span id="hue-rotateOutput"></span>
         </div>
         <div><img src="../star-wars.jpg" width="1500" height="800" id="hue-rotateImage"></div>
+
+        <div>
+            Фильтр invert:
+            <input type="range" min="0" max="100" value="0" onchange="invert()" id="invertValue">
+            <span id="invertOutput"></span>
+        </div>
+        <div><img src="../star-wars.jpg" width="1500" height="800" id="invertImage"></div>
+
+        <div>
+            Фильтр saturate:
+            <input type="range" min="0" max="500" value="100" onchange="saturate()" id="saturateValue">
+            <span id="saturateOutput"></span>
+        </div>
+        <div><img src="../star-wars.jpg" width="1500" height="800" id="saturateImage"></div>
     </main>
     
     <footer>
