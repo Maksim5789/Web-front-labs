@@ -20,6 +20,19 @@
         width: 600px;
         text-align: center;
     }
+    #rules {
+        display: none;
+    }
+    .block {
+        margin: 10px auto;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border: 3px solid gold;
+        border-radius: 15px;
+        line-height: 2;
+        width: 600px;
+        text-align: center;
+    }
     </style>
  
     <script>
@@ -64,6 +77,16 @@
         document.getElementById('user-number').value = '';
         number = Math.floor(Math.random()*100)+1; //Генерируем новое число
     }
+    function showRules() {
+        document.getElementById('show-rules').style.display = 'none';
+        document.getElementById('hide-rules').style.display = 'inline';
+        document.getElementById('rules-list').style.display = 'block';
+    }
+    function hideRules() {
+        document.getElementById('hide-rules').style.display = 'none';
+        document.getElementById('show-rules').style.display = 'inline';
+        document.getElementById('rules-list').style.display = 'none';
+    }
  </script>
 
 </head>
@@ -100,6 +123,26 @@
             <div>
                 <button onclick="again()">Сыграть ещё раз</button>
             </div>
+        </div>
+        <div class="block">
+            <button id="show-rules" onclick="showRules()">
+                Показать правила игры
+            </button>
+            <button id="hide-rules" onclick="hideRules()" style="display:none;">
+                Скрыть правила игры
+            </button>
+            <ol id="rules-list" style="display: none;" type="I">
+                <li>В эту игру может играть только один человек</li>
+                <li>Программа загадывает число от 1 до 100</li>
+                <li>Человек должен угадать это число</li>
+                <li>Если число слишком большое, то программа вам об этом сообщит</li>
+                <li>Если число слишком маленькое, то программа вам об этом сообщит</li>
+                <li>Вводите цифры и числа от 1 до 100</li>
+                <li>Вводите только цифры или числа</li>
+                <li>Если будет пустое значение, то программа не засчитает вам выигрышь</li>
+                <li>Чтобы сыграть ещё раз, нажмите кнопу "Сыграть ещё раз" после выигрыша</li>
+                <li>Не пользуйтесь консолью. Играйте честно!</li>
+            </ol>
         </div>
     </main>
     
