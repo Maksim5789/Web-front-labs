@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Акишин Максим Валерьевич. Лабораторная №5</title>
+    <link rel="stylesheet" href="..\main.css">
+    <link rel="shortcut icon" href="..\favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="..\favicon-32x32.png">
+    <link rel="shortcut icon" href="..\favicon-48x48.ico">
+    <style>
+        .block {
+            border: 2px solid black;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 30px;
+            background: gold;
+            width: 300px;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.5s; 
+        }        
+    </style>
+    
+    <script>
+        function changeColor(div) {
+            if(div.style.backgroundColor == 'gold') {
+                div.style.backgroundColor = 'red';
+                document.getElementById('color-name').innerHTML = 'красный';
+                div.style.color = 'white';
+            }
+            else if(div.style.backgroundColor == 'red') {
+                div.style.backgroundColor = 'black';
+                document.getElementById('color-name').innerHTML = 'черный';
+                div.style.color = 'white';
+            }
+            else if(div.style.backgroundColor == 'black') {
+                div.style.backgroundColor = 'pink';
+                document.getElementById('color-name').innerHTML = 'розовый';
+                div.style.color = 'black';
+            }
+            else if(div.style.backgroundColor == 'pink') {
+                div.style.backgroundColor = 'green';
+                document.getElementById('color-name').innerHTML = 'зеленый';
+                div.style.color = 'white';
+            }
+            else {
+                div.style.backgroundColor = 'gold';
+                document.getElementById('color-name').innerHTML = 'золотой';
+                div.style.color = 'black';
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная №6
+    </header>
+
+    <main>
+        <div class="block" ondblclick="changeColor(this)">
+            Цвет: <span id="color-name"></span><br>
+            Сделайте двойной щелчок,<br>
+            чтобы сменить цвет<br>
+        </div>
+            
+    </main>
+    
+    <footer>
+        &copy; Акишин Максим, ФБИ-22, 2 курс, 2024
+    </footer>   
+</body>
+</html>
