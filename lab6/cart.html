@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Акишин Максим Валерьевич. Лабораторная №6</title>
+    <link rel="stylesheet" href="..\main.css">
+    <link rel="shortcut icon" href="..\favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="..\favicon-32x32.png">
+    <link rel="shortcut icon" href="..\favicon-48x48.ico">
+    <script>
+    function calculateTotal() {
+        let balance = parseFloat(document.getElementById('balance').value);
+        let total = 0;
+        let errorMessage = "";
+        let error = false;
+        
+        let output = document.getElementById("total"); 
+        let input_item1 = document.getElementById("item1"); 
+        let input_item2 = document.getElementById("item2"); 
+        let input_item3 = document.getElementById("item3"); 
+        let input_item4 = document.getElementById("item4"); 
+        let input_item5 = document.getElementById("item5"); 
+        let input_item6 = document.getElementById("item6"); 
+        let input_item7 = document.getElementById("item7"); 
+
+        let item1 = parseInt(input_item1.value); 
+        let item2 = parseInt(input_item2.value); 
+        let item3 = parseInt(input_item3.value); 
+        let item4 = parseInt(input_item4.value); 
+        let item5 = parseInt(input_item5.value); 
+        let item6 = parseInt(input_item6.value); 
+        let item7 = parseInt(input_item7.value); 
+
+
+        for (let i = 1; i <= 7; i++) {
+            let quantity = parseInt(document.getElementById('item' + i).value);
+            total += quantity;
+            
+            if (quantity < 0) {
+            error = true;
+            errorMessage = "Ошибка: Количество товара не может быть отрицательным.";
+            }
+        }
+        
+        if (error) { 
+            document.getElementById('message').innerText = errorMessage; 
+            document.getElementById('total').innerText = ""; 
+        }  
+
+        
+        
+        result = (item1*100) + (item2*200) + (item3*300) + (item4*400) + (item5*500) + (item6*600) + (item7*700); 
+        
+        if (result <= balance) {    
+            document.getElementById('message').innerText = "Товары успешно оформлены"; 
+            document.getElementById('result').innerText = "Итоговая сумма: " + result; 
+        } else { 
+            document.getElementById('message').innerText = "Недостаточно средств на балансе для оформления заказа";
+            document.getElementById('result').innerText = ""; 
+        } 
+
+        // Clear the previous output if it exists
+        //document.getElementById('result').innerText = "";
+
+    
+
+
+        }
+</script>
+    
+
+
+</head>
+<body>
+    <header class="pointer" onclick="showAuthor()">
+        НГТУ, ФБ, Лабораторная №6
+    </header>
+
+    <main>
+        <h2>Мой баланс: <input type="text" id="balance"></h2>
+
+        <h3>Корзина товаров:</h3>
+        <form id="cart-form">
+        <input type="number" id="item1" value="0"> Товар 1 (100 рупий/ 1 кг)<br>
+        <input type="number" id="item2" value="0"> Товар 2 (200 рупий/ 1 кг)<br>
+        <input type="number" id="item3" value="0"> Товар 3 (300 рупий/ 1 кг)<br>
+        <input type="number" id="item4" value="0"> Товар 4 (400 рупий/ 1 кг)<br>
+        <input type="number" id="item5" value="0"> Товар 5 (500 рупий/ 1 кг)<br>
+        <input type="number" id="item6" value="0"> Товар 6 (600 рупий/ 1 кг)<br>
+        <input type="number" id="item7" value="0"> Товар 7 (700 рупий/ 1 кг)<br>
+        <button type="button" onclick="calculateTotal()">OK</button>
+        </form>
+
+        <p id="message"></p>
+        <p id="result"></p>
+    </main>
+    
+    <footer>
+        &copy; Акишин Максим, ФБИ-22, 2 курс, 2024
+    </footer>   
+</body>
+</html>
+
