@@ -48,6 +48,7 @@
 
         function add20_50() {
                 let main = document.querySelector('main');
+                main.innerHTML = '';
                 for(let i = 20; i<=50; i+=2.5) {
                     let newBlock = document.createElement('div');
                     newBlock.style.width = '70px';
@@ -59,8 +60,35 @@
                     newBlock.innerHTML = `${i}`;
 
                     main.appendChild(newBlock);
-                }
             }
+        }
+
+        function add10_neg80() {
+            let main = document.querySelector('main');
+
+            // Очищаем место под другие блоки
+            main.innerHTML = '';
+
+            for (let i = 10; i >= -80; i -= 3) {
+                let newCircle = document.createElement('div');
+                newCircle.style.width = '37px';
+                newCircle.style.height = '37px';
+                newCircle.style.fontSize = '20px'
+                newCircle.style.borderRadius = '50%';
+                newCircle.style.backgroundColor = 'white';
+                newCircle.style.border = '1px solid black';
+                newCircle.style.margin = '3px';
+                newCircle.style.textAlign = 'center';
+                newCircle.style.lineHeight = '30px';
+                newCircle.style.display = 'inline-block';
+                
+
+                // Вставляем счётчик внутрь круга
+                newCircle.innerHTML = `${i}`;
+
+                main.appendChild(newCircle);
+            }
+        }
     </script>
 </head>
 <body>
@@ -74,6 +102,7 @@
         <button onclick="addNewBlock()">Добавить блок</button>
         <button onclick="addNewBlocks()">Добавить блоки</button>
         <button onclick="add20_50()">20 => 50</button>
+        <button onclick="add10_neg80()">10 => -80</button>
 
     </main>
     
