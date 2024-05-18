@@ -71,18 +71,17 @@
 
             for (let i = 10; i >= -80; i -= 3) {
                 let newCircle = document.createElement('div');
-                newCircle.style.width = '37px';
-                newCircle.style.height = '37px';
+                newCircle.style.width = '40px';
+                newCircle.style.height = '40px';
                 newCircle.style.fontSize = '20px'
                 newCircle.style.borderRadius = '50%';
                 newCircle.style.backgroundColor = 'white';
                 newCircle.style.border = '1px solid black';
                 newCircle.style.margin = '3px';
                 newCircle.style.textAlign = 'center';
-                newCircle.style.lineHeight = '30px';
+                newCircle.style.lineHeight = '40px';
                 newCircle.style.display = 'inline-block';
-                
-
+                        
                 // Вставляем счётчик внутрь круга
                 newCircle.innerHTML = `${i}`;
 
@@ -115,6 +114,43 @@
                     main.appendChild(newBlock);
                 }
             }
+
+        function createWhiteBrownCircles() {
+            // Получаем значение из поля ввода
+            let numberOfCircles = parseInt(document.getElementById('circleCountInput').value, 10);
+
+            if (isNaN(numberOfCircles) || numberOfCircles <= 0) {
+                alert('Введите корректное количество кругов.');
+                return;
+            }
+
+            let main = document.querySelector('main');
+            main.innerHTML = '';
+
+            for (let i = numberOfCircles; i >= 1; i--) {
+                let circle = document.createElement('div');
+                circle.style.width = '50px';
+                circle.style.height = '50px';
+                circle.style.borderRadius = '50%';
+                circle.style.border = '3px solid black';
+                circle.style.display = 'inline-block';
+                circle.style.margin = '10px';
+                circle.style.textAlign = 'center';
+                circle.style.lineHeight = '50px';
+                circle.style.fontSize = '30px';
+                
+
+                if (i % 2 === 0) {
+                    circle.style.backgroundColor = 'gold';
+                } else {
+                    circle.style.backgroundColor = 'silver';
+                }
+
+                circle.innerHTML = `${i}`;
+
+                main.appendChild(circle);
+            }
+        }
     </script>
 </head>
 <body>
@@ -123,13 +159,18 @@
     </header>
 
     <main>
-        <input type="number" id="blockCountInput" min="1" placeholder="Введите количество блоков" style="margin-bottom: 10px; width: 190px;">
-        <br>
-        <button onclick="addNewBlock()">Добавить блок</button>
-        <button onclick="addNewBlocks()">Добавить блоки</button>
-        <button onclick="add20_50()">20 => 50</button>
-        <button onclick="add10_neg80()">10 => -80</button>
-        <button onclick="addBlocksWithOpacity()">Добавить полупрозрачные блоки</button>
+        <div>
+            <ol>
+            <li><input type="number" id="blockCountInput" min="1" placeholder="Введите количество блоков" style="margin: 10px; width: 200px;"></li>
+            <li><button onclick="addNewBlock()" style="margin: 10px;">Добавить блок</button></li>
+            <li><button onclick="addNewBlocks()" style="margin: 10px;">Добавить блоки</button></li>
+            <li><button onclick="add20_50()" style="margin: 10px;">20 => 50</button></li>
+            <li><button onclick="add10_neg80()" style="margin: 10px;">10 => -80</button></li>
+            <li><button onclick="addBlocksWithOpacity()" style="margin: 10px;">Добавить полупрозрачные блоки</button></li>
+            <li><input type="number" id="circleCountInput" min="1" placeholder="Введите количество кругов" style="margin: 10px; width: 200px;"></li>
+            <li><button onclick="createWhiteBrownCircles()" style="margin: 10px;">Gold_and_silver_circles</button></li>
+            </ol>
+        </div>
 
     </main>
     
