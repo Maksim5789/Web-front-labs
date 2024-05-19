@@ -26,10 +26,14 @@
                     };
 
                     const weatherHTML = `
+                        <div style="border: 3px solid black; display: inline-block; padding: 20px; background-color: rgb(197, 255, 221); margin: 10px;">
                         <h3>Погода в Новосибирске:</h3>
-                        <p>Утро (8:00): ${temperatures[timeIndices['08:00']]} °C</p>
-                        <p>День (12:00): ${temperatures[timeIndices['12:00']]} °C</p>
-                        <p>Вечер (20:00): ${temperatures[timeIndices['20:00']]} °C</p>
+                        <ol>
+                        <li><p>Погода утром (8:00): ${temperatures[timeIndices['08:00']]} °C</p></li>
+                        <li><p>Погода днём (12:00): ${temperatures[timeIndices['12:00']]} °C</p></li>
+                        <li><p>Погода вечером (20:00): ${temperatures[timeIndices['20:00']]} °C</p></li>
+                        </ol>
+                        </div>
                     `;
 
                     // Вставляем результат в страницу
@@ -48,7 +52,7 @@
     </header>
 
     <main>
-        <h1>Прогноз погоды</h1>
+        <h1 style="text-align: center;">Прогноз погоды</h1>
         <button onclick="fetchWeatherData()">Показать погоду</button>
         <div id="weather-info"></div>
     </main>
