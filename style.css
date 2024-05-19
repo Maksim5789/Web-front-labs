@@ -64,6 +64,16 @@ h1 {
     line-height: 1.5;
 }
 
+h2 {
+    font-weight: 600;
+    font-size: 20px;
+    color: #0072BB;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+
 .main_text {
     margin-left: 50px;
     width: 1200px;
