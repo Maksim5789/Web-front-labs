@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Акишин Максим Валерьевич. Лабораторная №7</title>
+    <link rel="stylesheet" href="..\main.css">
+    <link rel="shortcut icon" href="..\favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="..\favicon-32x32.png">
+    <link rel="shortcut icon" href="..\favicon-48x48.ico">
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #ffd900;
+            color: black;
+            border: 3px solid black;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        button:hover {
+            background-color: #2b3035;
+        }
+
+        #exchangeRate {
+            margin-top: 20px;
+            padding: 10px;
+            border: 3px solid black;
+            border-radius: 5px;
+        }
+    </style>
+    <script>
+        function getEuroExchangeRate() {
+            fetch('https://www.cbr-xml-daily.ru/daily_json.js')
+            .then(response => response.json())
+            .then(data => {
+                let currentDate = data.Date;
+                let currentRate = data.Valute.EUR.Value.toFixed(2);
+                let previousRate = data.Valute.EUR.Previous.toFixed(2);
+                let difference = currentRate - previousRate;
+                
+                let message = `
+                    <p>Дата запроса: ${currentDate}</p>
+                    <p>Текущий курс евро: ${currentRate}</p>
+                    <p>Курс за прошлую дату: ${previousRate}</p>
+                `;
+                
+                if (difference > 0) {
+                    message += `<p>Курс поднялся на ${difference}</p>`;
+                } else if (difference < 0) {
+                    message += `<p>Курс опустился на ${Math.abs(difference)}</p>`;
+                } else {
+                    message += `<p>Курс остался прежним</p>`;
+                }
+                
+                document.getElementById('exchangeRate').innerHTML = message;
+            })
+            .catch(err => console.error('Ошибка:', err));
+        }
+    </script>   
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная №7
+    </header>
+
+    <main>
+        <h1>Курс евро</h1>
+        <button onclick="getEuroExchangeRate()" style="margin: 10px;">Получить курс евро</button>
+        <div id="exchangeRate"></div>      
+    </main>
+    
+    <footer>
+        &copy; Акишин Максим, ФБИ-22, 2 курс, 2024
+    </footer>   
+</body>
+</html>
+
