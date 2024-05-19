@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Акишин Максим Валерьевич. Лабораторная №7</title>
+    <link rel="stylesheet" href="..\main.css">
+    <link rel="shortcut icon" href="..\favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="..\favicon-32x32.png">
+    <link rel="shortcut icon" href="..\favicon-48x48.ico">
+    <title>Stock Prices</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        function showStockPrices() {
+            let dates = ['03.04.2023', '04.04.2023', '05.04.2023', '06.04.2023', '10.04.2023', '11.04.2023', '12.04.2023', '13.04.2023', '14.04.2023', '17.04.2023'];
+            let prices = [1386.660, 1391.820, 1427.620, 1419.010, 1478.230, 1471.390, 1510.470, 1534.650, 1538.770, 1589.340];
+            
+            let tableContent = '<table>';
+            tableContent += '<tr><th>Дата</th><th>Цена акций</th><th>Разница</th></tr>';
+            
+            for (let i = 0; i < dates.length; i++) {
+                let difference = i > 0 ? prices[i] - prices[i-1] : '-';
+                tableContent += '<tr><td>' + dates[i] + '</td><td>' + prices[i] + '</td><td>' + difference + '</td></tr>';
+            }
+            
+            tableContent += '</table>';
+            document.getElementById('tableContainer').innerHTML = tableContent;
+            
+            let averagePrice = prices.reduce((a, b) => a + b, 0) / prices.length;
+            let maxPrice = Math.max(...prices);
+            let minPrice = Math.min(...prices);
+            
+            let statsContent = '<p>Среднее значение стоимости акции: ' + averagePrice + '</p>';
+            statsContent += '<p>Максимальная стоимость акции: ' + maxPrice + '</p>';
+            statsContent += '<p>Минимальная стоимость акции: ' + minPrice + '</p>';
+            
+            document.getElementById('tableContainer').innerHTML += statsContent;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная №7
+    </header>
+
+    <main>
+        <button onclick="showStockPrices()">Курс акций VEON</button>
+        <div id="tableContainer"></div>     
+    </main>
+    
+    <footer>
+        &copy; Акишин Максим, ФБИ-22, 2 курс, 2024
+    </footer>   
+</body>
+</html>
+
