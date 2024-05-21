@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>News from https://ria.ru/organization_VTB_Strakhovanie/</title>
+</head>
+<body>
+<h1>Latest news from VTB Insurance</h1>
+<ul id="news-list"></ul>
+
+<script>
+fetch('https://ria.ru/organization_VTB_Strakhovanie/')
+    .then(response => response.text())
+    .then(data => {
+        const parser = new DOMParser();
+        const htmlDoc = parser.parseFromString(data, 'text/html');
+        
+        const newsItems = htmlDoc.querySelectorAll('.b-list__item');
+        
+        newsItems.forEach(item => {
+            const title = item.querySelector('.b-list__item-title').innerText;
+            const link = item.querySelector('.b-list__item-title a').getAttribute('href');
+            
+            const listItem = document.createElement('li');
+            const newsLink = document.createElement('a');
+            newsLink.textContent = title;
+            newsLink.setAttribute('href', link);
+            listItem.appendChild(newsLink);
+            
+            document.getElementById('news-list').appendChild(listItem);
+        });
+    })
+    .catch(error => console.log('An error occurred:', error));
+</script>
+</body>
+</html>
