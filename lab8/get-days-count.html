@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Акишин Максим Валерьевич. Лабораторная №8</title>
+    <link rel="stylesheet" href="..\main.css">
+    <link rel="shortcut icon" href="..\favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="..\favicon-32x32.png">
+    <link rel="shortcut icon" href="..\favicon-48x48.ico">
+    <script src="get-days-count.js"></script>
+    <style>
+        .inputdate {
+            color: black;
+            padding: 10px 20px 10px 20px;
+            font-size: 25px;
+            border: 3px solid gold;
+            background-color: rgb(78, 168, 116);
+            box-shadow: 0 0 15px black;
+            width: 600px;
+        }
+
+        #daysCountResult {
+            color: black;
+            padding: 10px 20px 10px 20px;
+            margin-top: 20px;
+            margin-bottom: 70px;
+            font-size: 25px;
+            border: 3px solid gold;
+            background-color: rgb(78, 168, 116);
+            box-shadow: 0 0 15px black;
+            width: 600px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная №8
+    </header>
+
+    <main>
+        <div class="inputdate">
+            <div>
+                <label>Дата рождения: <input type="date"></label>
+            </div>
+            <div>
+                <button onclick="showDaysCount()">Показать число дней</button>
+            </div>
+        </div>
+        <div id="daysCountResult"></div>         
+    </main>
+    
+    <footer>
+        &copy; Акишин Максим, ФБИ-22, 2 курс, 2024
+    </footer>   
+</body>
+</html>
