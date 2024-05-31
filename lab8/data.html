@@ -20,6 +20,30 @@
             box-shadow: 0 0 15px black;
             width: 600px;
         }
+
+        .your-date {
+            color: black;
+            padding: 10px 20px 10px 20px;
+            margin: 20px auto;
+            margin-bottom: 20px;
+            font-size: 30px;
+            border: 3px solid gold;
+            background-color: rgb(78, 168, 116);
+            box-shadow: 0 0 15px black;
+            width: 600px;
+        }
+
+        #your-date {
+            color: black;
+            padding: 10px 20px 10px 20px;
+            margin: 20px auto;
+            margin-bottom: 70px;
+            font-size: 30px;
+            border: 3px solid gold;
+            background-color: rgb(78, 168, 116);
+            box-shadow: 0 0 15px black;
+            width: 600px;
+        }
     </style>
 </head>
 <body onload="ShowDate()">
@@ -28,6 +52,14 @@
     </header>
 
     <main>
+        <div class="your-date">
+            <p>Определение дня недели</p>
+            <input type="number" id="input-date" placeholder="Дата">
+            <input type="number" id="input-month" placeholder="Месяц">
+            <input type="number" id="input-year" placeholder="Год">
+            <button onclick="YourDate()">День недели</button>
+        </div>
+        <div id="your-date"></div>
         <div id="current-date"></div>    
     </main>
     
