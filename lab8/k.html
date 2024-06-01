@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clock</title>
+<style>
+    #clock {
+        width: 400px;
+        height: 400px;
+        border: 10px solid black;
+        border-radius: 50%;
+        position: relative;
+    }
+    .hour {
+        width: 4px;
+        height: 100px;
+        background-color: black;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-origin: top;
+    }
+    .minute {
+        width: 2px;
+        height: 150px;
+        background-color: black;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-origin: top;
+    }
+    .second {
+        width: 1px;
+        height: 180px;
+        background-color: red;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-origin: top;
+    }
+    .number {
+        position: absolute;
+        font-size: 20px;
+    }
+</style>
+</head>
+<body>
+<div id="clock">
+    <div class="hour" id="hourHand"></div>
+    <div class="minute" id="minuteHand"></div>
+    <div class="second" id="secondHand"></div>
+    <div class="number" style="top: 20px; left: 180px;">12</div>
+    <div class="number" style="top: 380px; left: 180px;">6</div>
+    <div class="number" style="top: 180px; left: 20px;">9</div>
+    <div class="number" style="top: 180px; left: 360px;">3</div>
+</div>
+
+<script>
+function showTime() {
+    let today = new Date();
+    let hours = today.getHours();
+    let minutes = today.getMinutes();
+    let seconds = today.getSeconds();
+
+    let hourHand = document.getElementById('hourHand');
+    hourHand.style.transform = `rotate(${30 * hours + minutes / 2 - 90}deg)`;
+
+    let minuteHand = document.getElementById('minuteHand');
+    minuteHand.style.transform = `rotate(${6 * minutes}deg)`;
+
+    let secondHand = document.getElementById('secondHand');
+    secondHand.style.transform = `rotate(${6 * seconds}deg)`;
+}
+
+setInterval(showTime, 1000);
+</script>
+</body>
+</html>
