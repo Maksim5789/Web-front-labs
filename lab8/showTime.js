@@ -6,7 +6,7 @@ function showTime() {
     document.getElementById('time').innerHTML = hours + ':' + minutes + ':' + seconds;
 
     let displayTime = document.getElementById('timeDisplay');
-    displayTime.innerHTML = seconds;
+    displayTime.innerHTML = hours + ':' + minutes + ':' + seconds;
     
     // Делаем так, чтобы время на часах показывало время пребывания на странице
     let hourHand = document.getElementById('hourHand');
